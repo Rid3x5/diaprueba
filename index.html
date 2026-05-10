@@ -1,204 +1,199 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feliz Día Mamá 💖</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día Mamá 💖</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #e6b3cc;
-  overflow-x: hidden;
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #e6b3cc;
+            overflow-x: hidden;
+        }
 
-/* CONTENEDOR */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  min-height: 100vh;
-  padding: 20px;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 2;
-}
+        /* CONTENEDOR */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            min-height: 100vh;
+            padding: 20px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
 
-/* SOBRE */
-.envelope {
-  width: 300px;
-  height: 200px;
-  background: #ffe6f0;
-  border: 2px solid #ff4d88;
-  border-radius: 10px;
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
+        /* SOBRE */
+        .envelope {
+            width: 300px;
+            height: 200px;
+            background: #ffe6f0;
+            border: 2px solid #ff4d88;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
 
-.envelope:hover {
-  transform: scale(1.05);
-}
+        .envelope:hover {
+            transform: scale(1.05);
+        }
 
-.flap {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ffb3cc;
-  clip-path: polygon(0 0, 100% 0, 50% 60%);
-  transition: transform 0.6s;
-  transform-origin: top;
-}
+        .flap {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ffb3cc;
+            clip-path: polygon(0 0, 100% 0, 50% 60%);
+            transition: transform 0.6s;
+            transform-origin: top;
+        }
 
-.texto-sobre {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 70%;
-  font-weight: bold;
-  color: #ff4d88;
-}
+        .texto-sobre {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 70%;
+            font-weight: bold;
+            color: #ff4d88;
+        }
 
-.open .flap {
-  transform: rotateX(180deg);
-}
+        .open .flap {
+            transform: rotateX(180deg);
+        }
 
-/* CARTA */
-.card {
-  width: 350px;
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  display: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  text-align: center;
-}
+        /* CARTA */
+        .card {
+            width: 350px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            display: none;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        }
 
-.card h2 {
-  color: #ff4d88;
-}
+        .card h2 {
+            color: #ff4d88;
+        }
 
-.card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-top: 10px;
-  transition: opacity 0.5s;
-}
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+            transition: opacity 0.5s;
+            cursor: pointer;
+        }
 
-/* CORAZONES LLUVIA */
-.heart-rain {
-  position: fixed;
-  top: -10px;
-  font-size: 20px;
-  animation: fall linear infinite;
-  z-index: 1;
-}
+        /* CORAZONES LLUVIA */
+        .heart-rain {
+            position: fixed;
+            top: -10px;
+            font-size: 20px;
+            animation: fall linear infinite;
+            z-index: 1;
+        }
 
-@keyframes fall {
-  to {
-    transform: translateY(110vh);
-  }
-}
+        @keyframes fall {
+            to {
+                transform: translateY(110vh);
+            }
+        }
 
-/* RESPONSIVO */
-@media (max-width: 600px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .card {
-    width: 90%;
-  }
-}
-</style>
-
+        @media (max-width: 600px) {
+            .container { flex-direction: column; }
+            .card { width: 90%; }
+        }
+    </style>
 </head>
 <body>
 
+<audio id="musica" src="af2.mp3" loop></audio>
+
 <div class="container">
+    <div class="envelope" id="envelope" onclick="abrir()">
+        <div class="flap"></div>
+        <div class="texto-sobre">Para Mamá 💖</div>
+    </div>
 
-  <!-- SOBRE -->
-  <div class="envelope" id="envelope" onclick="abrir()">
-    <div class="flap"></div>
-    <div class="texto-sobre">Para Mamá 💖</div>
-  </div>
+    <div class="card" id="card">
+        <h2>💖 Feliz Día Mamá 💖</h2>
+        <p>
+Mamá, aún no sé cómo escribir cartas a mis 18 años, pero bueno, 
+lo voy a intentar. Gracias por ser la mejor mamá del mundo
+ gracias por apoyarme día con día, en los días que me sentía mal, 
+ en los que lloraba o en los que me enfermaba. Gracias por aguantarme, 
+ aunque sé que a veces soy muy desesperante.
 
-  <!-- CARTA -->
-  <div class="card" id="card" onclick="cambiarImagen()">
-    <h2>💖 Feliz Día Mamá 💖</h2>
-    <p>
-      Mamá, gracias por todo lo que haces por mí.<br>
-      Te amo muchísimo 💕
-    </p>
+Sé que hemos pasado cosas muy difíciles y sé que tú has pasado cosas 
+muy difíciles, pero te quiero decir gracias. 
+Gracias por nunca rendirte, gracias por estar para Omar y para mí todos 
+los días y por ayudarnos cuando más lo necesitamos. Mamá, quiero que sepas 
+que te quiero mucho y que te amo de aquí a todo el universo.
 
-    <img id="imagen" src="foto1.jpg">
-  </div>
-
+        </p>
+        <img id="imagen" src="mf2.jpeg" onclick="cambiarImagen()">
+        <p style="font-size: 12px; color: #888;">(Toca la foto para ver más )</p>
+    </div>
 </div>
 
 <script>
-/* ABRIR SOBRE */
-function abrir() {
-  const sobre = document.getElementById("envelope");
-  const carta = document.getElementById("card");
+    /* ABRIR SOBRE Y ACTIVAR MÚSICA */
+    function abrir() {
+        const sobre = document.getElementById("envelope");
+        const carta = document.getElementById("card");
+        const audio = document.getElementById("musica");
 
-  sobre.classList.toggle("open");
+        sobre.classList.toggle("open");
 
-  if (carta.style.display === "block") {
-    carta.style.display = "none";
-  } else {
-    setTimeout(() => {
-      carta.style.display = "block";
-    }, 400);
-  }
-}
+        // Reproducir música al abrir
+        if (audio.paused) {
+            audio.play().catch(e => console.log("Audio bloqueado por el navegador"));
+        }
 
-/* CARRUSEL DE IMÁGENES */
-const imagenes = [
-  "mf2.jpeg",
-  "mf3.jpeg",
-  "mf4.jpeg",
-  "mf5.jpeg",
-  "mf6.jpeg",
-  "mf7.jpeg",
-  "mf8.jpeg"
-];
+        if (carta.style.display === "block") {
+            carta.style.display = "none";
+        } else {
+            setTimeout(() => {
+                carta.style.display = "block";
+            }, 400);
+        }
+    }
 
-let index = 0;
+    /* CARRUSEL DE IMÁGENES */
+    const imagenes = [
+        "mf2.jpeg", "mf3.jpeg", "mf4.jpeg", "mf5.jpeg", 
+        "mf6.jpeg", "mf7.jpeg", "mf8.jpeg"
+    ];
+    let index = 0;
 
-function cambiarImagen() {
-  const img = document.getElementById("imagen");
+    function cambiarImagen() {
+        const img = document.getElementById("imagen");
+        img.style.opacity = 0;
 
-  img.style.opacity = 0;
+        setTimeout(() => {
+            index = (index + 1) % imagenes.length;
+            img.src = imagenes[index];
+            img.style.opacity = 1;
+        }, 300);
+    }
 
-  setTimeout(() => {
-    index = (index + 1) % imagenes.length;
-    img.src = imagenes[index];
-    img.style.opacity = 1;
-  }, 300);
-}
+    /* LLUVIA DE CORAZONES */
+    function crearCorazon() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart-rain");
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        heart.style.fontSize = (Math.random() * 15 + 15) + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => { heart.remove(); }, 5000);
+    }
 
-/* LLUVIA DE CORAZONES (optimizada) */
-function crearCorazon() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart-rain");
-
-  heart.innerHTML = "💖";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
-  heart.style.fontSize = (Math.random() * 15 + 15) + "px";
-
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 5000);
-}
-
-/* CONTROL PARA QUE NO SE BUGUEE */
-setInterval(crearCorazon, 300);
+    setInterval(crearCorazon, 300);
 </script>
 
 </body>
